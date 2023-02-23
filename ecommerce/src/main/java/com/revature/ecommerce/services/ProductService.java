@@ -3,6 +3,7 @@ package com.revature.ecommerce.services;
 import com.revature.ecommerce.models.Product;
 import com.revature.ecommerce.repositories.ProductRepository;
 import jakarta.persistence.EntityNotFoundException;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,7 +11,7 @@ import java.util.List;
 @Service
 public class ProductService {
     private static ProductRepository products;
-
+    
     public ProductService(ProductRepository productRepository) {
         products = productRepository;
     }
@@ -21,6 +22,7 @@ public class ProductService {
     public static Product getById(Long id) { 
         try {
             Product product = products.getReferenceById(id);
+            product.
             product.getName();
             return product;
         } catch (EntityNotFoundException e) {
