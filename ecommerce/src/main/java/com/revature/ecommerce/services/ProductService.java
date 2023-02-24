@@ -20,13 +20,6 @@ public class ProductService {
         return products.findAll();
     }
     public static Product getById(Long id) { 
-        try {
-            Product product = products.getReferenceById(id);
-            product.
-            product.getName();
-            return product;
-        } catch (EntityNotFoundException e) {
-            return null;
-        }
+            return products.findById(id).orElse(null);
     }
 }

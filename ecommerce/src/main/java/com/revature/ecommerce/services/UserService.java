@@ -24,8 +24,8 @@ public class UserService {
         try {
             users.save(user);
         } catch (DataAccessException dae) {
-            throw new ResourceConflictException(dae.getMessage());
-//            throw new ResourceConflictException("User already exists.");
+//            throw new ResourceConflictException(dae.getMessage());
+            throw new ResourceConflictException("User already exists.");
         }
         return "";
     }
